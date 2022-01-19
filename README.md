@@ -1,3 +1,6 @@
+Após baixar o projeto é necessario utilizar o comando yarn install. Quando terminar de instalar inicie o projeto com yarn start
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
