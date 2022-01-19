@@ -1,8 +1,8 @@
 # IMPORTANTE 
 
-Após baixar o projeto é necessario utilizar o comando yarn install. Quando terminar de instalar inicie o projeto com yarn start
+## Após baixar o projeto é necessario utilizar o comando yarn install. Quando terminar de instalar inicie o projeto com yarn start
 
-instalação do material ui
+## instalação do material ui
 yarn add @material-ui/core@4.12.3
 
 yarn add @material-ui/icons@4.11.2
