@@ -15,13 +15,13 @@ function Home() {
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                        <Button variant="outlined" className='botao'>Ver Produtos</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
                     <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
                 </Grid>
-                <Grid xs={12} className='postagens'>
+                <Grid xs={12} className='produtos'>
                 </Grid>
             </Grid>
         </>

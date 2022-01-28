@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Sobrenos from './paginas/sobrenos/Sobrenos';
 import Contato from './paginas/contato/Contato';
+import ListaProduto from './components/produtos/listaProduto/ListaProduto';
 
 
 function App() {
@@ -15,37 +16,44 @@ function App() {
     <>
       <Router>
         <Navbar />
-          <Switch>
-            <div style={{minHeight: '100vh'}}>
-              
-              <Route exact path= '/'>
-                <Login />
-              </Route>
+        <Switch>
+          <div style={{ minHeight: '100vh' }}>
 
-              <Route path= '/home'>
-                <Home />
-              </Route>
+            <Route exact path='/'>
+              <Login />
+            </Route>
 
-              <Route path= '/sobrenos'>
-                <Sobrenos />
-              </Route>
+            <Route path='/home'>
+              <Home />
+            </Route>
 
-              <Route path= '/contato'>
-                <Contato />
-              </Route>
+            <Route path='/sobrenos'>
+              <Sobrenos />
+            </Route>
 
-              <Route path= '/cadastrousuario'>
-                <CadastroUsuario />
-              </Route>
+            <Route path='/contato'>
+              <Contato />
+            </Route>
 
-              <Route path= '/login'>
-                <Login />
-              </Route>
+            <Route path='/cadastrousuario'>
+              <CadastroUsuario />
+            </Route>
 
-            </div>
-          </Switch>
+            <Route path='/produtos'>
+              <ListaProduto />
+            </Route>
+
+            <Route path='/login'>
+              <Login />
+            </Route>
+
+          </div>
+        </Switch>
         <Footer />
       </Router>
+
+
+
     </>
   );
 }
