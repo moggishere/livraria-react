@@ -9,11 +9,19 @@ import './App.css';
 import Sobrenos from './paginas/sobrenos/Sobrenos';
 import Contato from './paginas/contato/Contato';
 import ListaProduto from './components/produtos/listaProduto/ListaProduto';
+import CadastroProduto from './components/produtos/cadastroProduto/CadastroProduto';
+import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
+import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
+import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
+import { ToastContainer } from 'react-toastify';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
+    <ToastContainer />
       <Router>
         <Navbar />
         <Switch>
@@ -39,7 +47,7 @@ function App() {
               <CadastroUsuario />
             </Route>
 
-            <Route path='/produtos'>
+            <Route path='/produto'>
               <ListaProduto />
             </Route>
 
@@ -47,14 +55,31 @@ function App() {
               <Login />
             </Route>
 
+            <Route exact path='/formularioProduto'>
+            <CadastroProduto />
+          </Route>
+          <Route exact path='/formularioProduto/:id'>
+            <CadastroProduto />
+          </Route>
+          <Route exact path='/formularioCategoria'>
+            <CadastroCategoria />
+          </Route>
+          <Route exact path='/formularioCategoria/:id'>
+            <CadastroCategoria />
+          </Route>
+          <Route path='/deletarProduto/:id'>
+            <DeletarProduto />
+          </Route>
+          <Route path='/deletarCategoria/:id'>
+            <DeletarCategoria />
+          </Route>
+
+
           </div>
         </Switch>
         <Footer />
       </Router>
-
-
-
-    </>
+      </Provider>
   );
 }
 

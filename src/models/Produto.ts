@@ -6,11 +6,11 @@ interface Produto{
     autor: string;
     sinopse: string;
     editora: string;
-    /* file_directory - confirmar se este mesmo */
+    diretorio: string;
     preco: number;
     foto: string;
-    fisico: boolean;
-    promo: boolean;
+    fisico: string;
+    promo: string;
     categoria?: Categoria| null
 }
 

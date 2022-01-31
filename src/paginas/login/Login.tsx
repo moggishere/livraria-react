@@ -3,7 +3,7 @@ import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/userLogin';
-// import { useDispatch } from 'react-redux'; // NAO USAR
+ import { useDispatch } from 'react-redux'; // NAO USAR
 import { addToken } from "../../store/tokens/actions"; 
 import { toast } from 'react-toastify';
 import './Login.css';
@@ -11,7 +11,7 @@ import './Login.css';
 
 function Login() {
     let history = useHistory();
-    // const dispatch = useDispatch();
+     const dispatch = useDispatch();
     const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -32,7 +32,7 @@ function Login() {
 
             useEffect(()=>{
                 if(token != ''){
-                    // dispatch(addToken(token));
+                    dispatch(addToken(token));
                     history.push('/home')
                 }
             }, [token])

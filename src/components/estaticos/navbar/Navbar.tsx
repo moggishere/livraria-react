@@ -15,30 +15,37 @@ function Navbar (){
                     </Typography>
                 </Box>
 
-                <Box display="flex" justifyContent="start">
-                    <Box mx={1} className='cursor'>
-                        <Typography variant="h6" color="inherit">
-                            Home
-                        </Typography>
+                <Link to='/home'>
+                    <Box display="flex" justifyContent="start">
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" color="inherit">
+                                Home
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
+                </Link>
 
-                <Box display="flex" justifyContent="start">
-                    <Box mx={1} className='cursor'>
-                        <Typography variant="h6" color="inherit">
-                            Sobre Nós
-                        </Typography>
+                <Link to='/sobrenos'>
+                    <Box display="flex" justifyContent="start">
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" color="inherit">
+                                Sobre Nós
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
+                </Link>
 
-                <Box display="flex" justifyContent="start">
-                    <Box mx={1} className='cursor'>
-                        <Typography variant="h6" color="inherit">
-                            Produtos
-                        </Typography>
+                <Link to='/produto'>
+                    <Box display="flex" justifyContent="start">
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h6" color="inherit">
+                                Produtos
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
+                </Link>
 
+                <Link to='/contato' className='text-decorator-none'>
                 <Box display="flex" justifyContent="start">
                     <Box mx={1} className='cursor'>
                         <Typography variant="h6" color="inherit">
@@ -46,6 +53,7 @@ function Navbar (){
                         </Typography>
                     </Box>
                 </Box>
+                </Link>
 
                 <Link to='/login' className='text-decorator-none'>
                     <Box display="flex" justifyContent="start">

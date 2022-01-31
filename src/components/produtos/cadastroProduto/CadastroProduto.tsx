@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroPost.css';
+import './CadastroProduto.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
@@ -46,11 +46,12 @@ function CadastroProduto() {
         titulo: '',
         autor: '',
         sinopse: '',
+        diretorio: '',
         editora: '',
         preco: 0,
         foto:'',
-        fisico: false,
-        promo: false,
+        fisico: '',
+        promo: '',
         categoria: null
     })
 
@@ -69,7 +70,7 @@ function CadastroProduto() {
     }, [id])
 
     async function getCategorias() {
-        await busca("/categoria", setCategorias, {
+        await busca("/categorias", setCategorias, {
             headers: {
                 'Authorization': token
             }
@@ -77,7 +78,7 @@ function CadastroProduto() {
     }
 
     async function findByIdProduto(id: string) {
-        await buscaId(`produtos/${id}`, setProduto, {
+        await buscaId(`produto/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
@@ -98,7 +99,7 @@ function CadastroProduto() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/produtos`, produto, setProduto, {
+            put(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
@@ -114,11 +115,12 @@ function CadastroProduto() {
                 progress: undefined,
             });
         } else {
-            post(`/produtos`, produto, setProduto, {
+            post(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
+            console.log(produto);
             toast.success('Produto cadastrado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
@@ -144,6 +146,12 @@ function CadastroProduto() {
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produto</Typography>
                 <TextField value={produto.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={produto.sinopse} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="sinopse" label="sinopse" name="sinopse" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.editora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="editora" label="editora" variant="outlined" name="editora" margin="normal" fullWidth />
+                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preco" variant="outlined" name="preco" margin="normal" fullWidth />
+                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="foto" variant="outlined" name="foto" margin="normal" fullWidth />
+                <TextField value={produto.fisico} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="fisico" label="fisico" variant="outlined" name="fisico" margin="normal" fullWidth />
+                <TextField value={produto.promo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="promo" label="promo" variant="outlined" name="promo" margin="normal" fullWidth />
+                <TextField value={produto.diretorio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="diretorio" label="diretorio" variant="outlined" name="diretorio" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
