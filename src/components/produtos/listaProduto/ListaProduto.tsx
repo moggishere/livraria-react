@@ -66,9 +66,9 @@ function ListaProduto() {
                 <Typography variant="body2" component="p">
                   {produto.sinopse}
                 </Typography>
-                <Typography variant="body2" component="p">
+                {/* <Typography variant="body2" component="p">
                   {produto.editora}
-                </Typography>
+                </Typography> */}
                 <Typography variant="body2" component="p">
                   {produto.preco}
                 </Typography>
@@ -78,9 +78,9 @@ function ListaProduto() {
                 <Typography variant="body2" component="p">
                   {produto.foto}
                 </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.fisico}
-                </Typography>
+                {/* <Typography variant="body2" component="p"> */}
+                  {/* {produto.fisico} */}
+                {/* </Typography> */}
                 <Typography variant="body2" component="p">
                   {produto.categoria?.descricaoCategoria}
                 </Typography>
