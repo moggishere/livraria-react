@@ -51,7 +51,7 @@ function ModalProduto () {
       
       </Box>
       
-      <CadastroProduto />
+      <CadastroProduto/>
       
     </div>
   );
@@ -61,7 +61,7 @@ function ModalProduto () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}>Novo produto</Button>
+        onClick={handleOpen}>Novo Produto</Button>
       <Modal
         open={open}
         onClose={handleClose}

@@ -19,7 +19,7 @@ function CadastroCategoria() {
         id: 0,
         descricaoCategoria: '',
         produtoCategoria: '',
-        impulso: true
+        impulso: false
     })
 
     useEffect(() => {
@@ -46,7 +46,7 @@ function CadastroCategoria() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/categoria/${id}`, setCategoria, {
+        buscaId(`/categorias/${id}`, setCategoria, {
             headers: {
               'Authorization': token
             }
@@ -64,16 +64,16 @@ function CadastroCategoria() {
         
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
             e.preventDefault()
-            console.log("categoria " + JSON.stringify(categoria))
+            console.log("categoria" + JSON.stringify(categoria))
     
             if (id !== undefined) {
                 console.log(categoria)
-                put(`/categoria`, categoria, setCategoria, {
+                put(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                toast.success('Categoria atualizado com sucesso', {
+                toast.success('Categoria atualizada com sucesso', {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -84,12 +84,12 @@ function CadastroCategoria() {
                     progress: undefined,
                     });
             } else {
-                post(`/categoria`, categoria, setCategoria, {
+                post(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                toast.success('Categoria cadastrado com sucesso', {
+                toast.success('Categoria cadastrada com sucesso', {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -105,13 +105,13 @@ function CadastroCategoria() {
         }
     
         function back() {
-            history.push('/categoria')
+            history.push('/categorias')
         }
   
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro cadastro</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro categoria</Typography>
                 <TextField value={categoria.descricaoCategoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar

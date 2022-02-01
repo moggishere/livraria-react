@@ -15,7 +15,7 @@ function CadastroProduto() {
     const [categorias, setCategorias] = useState<Categoria[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -39,23 +39,19 @@ function CadastroProduto() {
             id: 0,
             descricaoCategoria: '',
             produtoCategoria: '',
-            impulso: false,
+            impulso: false
         })
     const [produto, setProduto] = useState<Produto>({
         id: 0,
         titulo: '',
         autor: '',
         sinopse: '',
-        // diretorio: '',
-        // editora: '',
-        preco: 0,
-        foto:'',
-        // fisico: '',
-        // promo: '',
+        preco: '',
+        foto: '',
         categoria: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setProduto({
             ...produto,
             categoria: categoria
@@ -63,13 +59,13 @@ function CadastroProduto() {
     }, [categoria])
 
     useEffect(() => {
-        getCategorias()
+        getCategoria()
         if (id !== undefined) {
             findByIdProduto(id)
         }
     }, [id])
 
-    async function getCategorias() {
+    async function getCategoria() {
         await busca("/categorias", setCategorias, {
             headers: {
                 'Authorization': token
@@ -104,7 +100,7 @@ function CadastroProduto() {
                     'Authorization': token
                 }
             })
-            toast.success('Produto atualizada com sucesso', {
+            toast.success('Produto atualizado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -120,7 +116,6 @@ function CadastroProduto() {
                     'Authorization': token
                 }
             })
-            console.log(produto);
             toast.success('Produto cadastrado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
@@ -147,19 +142,15 @@ function CadastroProduto() {
                 <TextField value={produto.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={produto.autor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="autor" label="autor" name="autor" variant="outlined" margin="normal" fullWidth />
                 <TextField value={produto.sinopse} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="sinopse" label="sinopse" name="sinopse" variant="outlined" margin="normal" fullWidth />
-                {/* <TextField value={produto.editora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="editora" label="editora" variant="outlined" name="editora" margin="normal" fullWidth /> */}
-                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preco" variant="outlined" name="preco" margin="normal" fullWidth />
-                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="foto" variant="outlined" name="foto" margin="normal" fullWidth />
-                {/* <TextField value={produto.fisico} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="fisico" label="fisico" variant="outlined" name="fisico" margin="normal" fullWidth /> */}
-                {/* <TextField value={produto.promo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="promo" label="promo" variant="outlined" name="promo" margin="normal" fullWidth /> */}
-                {/* <TextField value={produto.diretorio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="diretorio" label="diretorio" variant="outlined" name="diretorio" margin="normal" fullWidth /> */}
+                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preco" name="preco" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
+                        onChange={(e) => buscaId(`/categorias/${e.target.value}`, setCategoria, {
                             headers: {
                                 'Authorization': token
                             }

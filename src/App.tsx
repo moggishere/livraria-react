@@ -7,12 +7,11 @@ import Login from './paginas/login/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Sobrenos from './paginas/sobrenos/Sobrenos';
-import Contato from './paginas/contato/Contato';
 import ListaProduto from './components/produtos/listaProduto/ListaProduto';
 import CadastroProduto from './components/produtos/cadastroProduto/CadastroProduto';
-import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
+import CadastroCategoria from './components/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
-import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
+import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 import store from './store/store';
@@ -37,10 +36,6 @@ function App() {
 
             <Route path='/sobrenos'>
               <Sobrenos />
-            </Route>
-
-            <Route path='/contato'>
-              <Contato />
             </Route>
 
             <Route path='/cadastrousuario'>

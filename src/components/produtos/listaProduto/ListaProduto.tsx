@@ -10,7 +10,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function ListaProduto() {
-  const [produto, setProduto] = useState<Produto[]>([])
+  const [produtos, setProdutos] = useState<Produto[]>([])
   let history = useHistory();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -34,7 +34,7 @@ function ListaProduto() {
   }, [token])
 
   async function getPost() {
-    await busca("/produto", setProduto, {
+    await busca("/produto", setProdutos, {
       headers: {
         'Authorization': token
       }
@@ -45,12 +45,12 @@ function ListaProduto() {
 
     getPost()
 
-  }, [produto.length])
+  }, [produtos.length])
 
   return (
     <>
       {
-        produto.map(produto => (
+        produtos.map(post => (
           <Box m={2} >
             <Card variant="outlined">
               <CardContent>
@@ -58,44 +58,26 @@ function ListaProduto() {
                   Produtos
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {produto.titulo}
+                  {post.titulo}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.autor}
+                  {post.sinopse}  
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.sinopse}
-                </Typography>
-                {/* <Typography variant="body2" component="p">
-                  {produto.editora}
-                </Typography> */}
-                <Typography variant="body2" component="p">
-                  {produto.preco}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.categoria}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.foto}
-                </Typography>
-                {/* <Typography variant="body2" component="p"> */}
-                  {/* {produto.fisico} */}
-                {/* </Typography> */}
-                <Typography variant="body2" component="p">
-                  {produto.categoria?.descricaoCategoria}
+                  {post.categoria?.descricaoCategoria}
                 </Typography>
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
+                  <Link to={`/produto/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
+                  <Link to={`/produto/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         deletar
@@ -103,7 +85,7 @@ function ListaProduto() {
                     </Box>
                   </Link>
                 </Box>
-                </CardActions>
+              </CardActions>
             </Card>
           </Box>
         ))

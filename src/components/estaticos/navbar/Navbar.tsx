@@ -45,11 +45,11 @@ function Navbar (){
                     </Box>
                 </Link>
 
-                <Link to='/contato' className='text-decorator-none'>
+                <Link to='/formularioCategoria' className='text-decorator-none'>
                 <Box display="flex" justifyContent="start">
                     <Box mx={1} className='cursor'>
                         <Typography variant="h6" color="inherit">
-                            Contatos
+                            Cadastrar Categorias
                         </Typography>
                     </Box>
                 </Box>

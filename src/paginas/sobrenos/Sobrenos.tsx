@@ -1,26 +1,3 @@
-// import React from 'react';
-// import { Grid } from '@material-ui/core';
-// import './Sobrenos.css';
-
-
-// function Sobrenos() {
-//     return (
-//         <>
-//            <Grid>
-//                <Grid>
-//                    <p>
-//                        A proposta para lidar com isso pelo grupo é facilitar o acesso para todes por meio da criação de uma plataforma ecommerce.  Será possível obter livros por preços justos e abrir porta para especialmente escritores novos no mercado e pertencentes a grupos marginalizados. 
-
-//                        Além da proposta de ser uma plataforma de venda de livros, também propomos formas flexíveis de distribuir cópias deles. Por exemplo, a possibilidade de compradores patrocinarem a leitura de quem precisa.
-//                     </p>
-//                </Grid>
-//             </Grid>
-//        </>
-//    );
-// }
-
-// export default Sobrenos;
-
 import React, { } from 'react'
 import { Typography, Box, Grid, } from '@material-ui/core';
 import { Link } from 'react-router-dom';

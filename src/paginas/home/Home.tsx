@@ -45,7 +45,7 @@ function Home() {
                     <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
                 </Grid>
                 <Grid xs={12} className='produtos'>
-                    {/* <TabProduto />  */}
+                    < TabProduto />  
                 </Grid>
             </Grid>
         </>

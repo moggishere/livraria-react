@@ -7,7 +7,7 @@ interface Produto{
     sinopse: string;
     // editora: string;
     // diretorio: string;
-    preco: number;
+    preco: string;
     foto: string;
     // fisico: string;
     // promo: string;

@@ -21,7 +21,7 @@ function TabProduto() {
         </AppBar>
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">
-            <ListaProduto />
+            <ListaProduto/>
           </Box>
         </TabPanel>
         <TabPanel value="2">
