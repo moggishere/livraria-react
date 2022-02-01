@@ -18,8 +18,8 @@ function CadastroUsuario() {
             usuario: '',
             senha: '',
             // cpf: '',
-            nascimento: '',
-            genero: '',
+            // nascimento: '',
+            // genero: '',
             // privilegio: '',
             cadastro: '',
             foto: ''
@@ -32,8 +32,8 @@ function CadastroUsuario() {
             usuario: '',
             senha: '',
             // cpf: '',
-            nascimento: '',
-            genero: '',
+            // nascimento: '',
+            // genero: '',
             // privilegio: '',
             cadastro: '',
             foto: ''
@@ -98,8 +98,8 @@ function CadastroUsuario() {
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         {/* <TextField value={user.cpf} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='cpf' label='cpf' variant='outlined' name='cpf' margin='normal' fullWidth /> */}
-                        <TextField value={user.nascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nascimento' label='data de nascimento' variant='outlined' name='nascimento' margin='normal' fullWidth />
-                        <TextField value={user.genero} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='genero' label='genero' variant='outlined' name='genero' margin='normal' fullWidth />
+                        {/* <TextField value={user.nascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nascimento' label='data de nascimento' variant='outlined' name='nascimento' margin='normal' fullWidth /> */}
+                        {/* <TextField value={user.genero} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='genero' label='genero' variant='outlined' name='genero' margin='normal' fullWidth /> */}
                         {/* <TextField value={user.privilegio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='privilegio' label='privilegio' variant='outlined' name='privilegio' margin='normal' fullWidth /> */}
 
                         <Box marginTop={2} textAlign='center'>

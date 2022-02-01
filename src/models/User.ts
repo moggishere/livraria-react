@@ -4,8 +4,8 @@ interface User {
     usuario: string;
     senha: string;
     // cpf: string;
-    nascimento: string;
-    genero: string;
+    // nascimento: string;
+    // genero: string;
     // privilegio: string;
     cadastro: string;
     foto: string;
